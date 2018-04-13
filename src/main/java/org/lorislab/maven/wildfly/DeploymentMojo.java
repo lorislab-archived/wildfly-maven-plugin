@@ -64,8 +64,8 @@ public class DeploymentMojo extends AbstractServerMavenPlugin {
     /**
      * The deploy the file to the server.
      *
-     * @throws MojoExecutionException
-     * @throws MojoFailureException
+     * @throws MojoExecutionException if the method fails
+     * @throws MojoFailureException if the method fails
      */
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
