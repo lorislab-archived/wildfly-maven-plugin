@@ -1,5 +1,7 @@
 # Wildfly plugin to deploy the application 
 
+Build: [![Build Status](https://travis-ci.org/lorislab/wildfly-maven-plugin.svg?branch=master)](https://travis-ci.org/lorislab/wildfly-maven-plugin)
+
 ## Docker example
 
 ```java
