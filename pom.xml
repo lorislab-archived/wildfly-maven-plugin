@@ -82,9 +82,6 @@
                 <inherited>true</inherited>
                 <configuration>
                     <aggregate>true</aggregate>
-                    <links>
-                        <link>http://java.sun.com/javase/8/docs/api/</link>
-                    </links>
                 </configuration>
             </plugin>
             <plugin>
