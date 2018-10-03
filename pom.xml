@@ -5,7 +5,7 @@
     <groupId>org.lorislab.maven</groupId>
     <artifactId>wildfly-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     
     <name>Wildfly server plugin</name>
     <description>The wildfly server plugin</description>
@@ -18,7 +18,7 @@
     </scm>
 		
     <prerequisites>
-        <maven>2.2.1</maven>
+        <maven>3.3</maven>
     </prerequisites>
 
     <licenses>
@@ -46,22 +46,22 @@
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-project</artifactId>
-            <version>2.0.11</version>
+            <version>2.2.1</version>
         </dependency>        
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
-            <version>2.2.1</version>
+            <version>3.3.1</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.4</version>
+            <version>2.6</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven.plugin-tools</groupId>
             <artifactId>maven-plugin-annotations</artifactId>
-            <version>3.2</version>
+            <version>3.3</version>
         </dependency>			
     </dependencies>
 	    
@@ -69,12 +69,12 @@
         <plugins>
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
+                <version>3.0.1</version>
                 <inherited>true</inherited>
             </plugin>
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.0.1</version>
                 <inherited>true</inherited>
                 <configuration>
                     <aggregate>true</aggregate>
@@ -83,7 +83,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>2.3.1</version>
+                <version>3.1.0</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -98,7 +98,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-plugin-plugin</artifactId>
-                <version>3.2</version>
+                <version>3.3</version>
                 <configuration>
                     <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
                 </configuration>
@@ -165,7 +165,7 @@
     <distributionManagement>
         <repository>
             <id>bintray</id>
-            <url>https://api.bintray.com/maven/lorislab/maven/wildfly-maven-plugin</url>
+            <url>https://api.bintray.com/maven/lorislab/maven/wildfly-maven-plugin;publish=1</url>
         </repository>
     </distributionManagement>            
 </project>
