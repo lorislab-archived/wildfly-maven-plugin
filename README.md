@@ -12,17 +12,92 @@
 
 ## Parameters
 
-| Name        | Property    | Default     | Goal        | Description |
-| ----------- | ----------- | ----------- | ----------- | ----------- |
-| absolutePath | org.lorislab.maven.wildfly.server.path | | docker-deploy,docker-undeploy,deploy | The wildfly server deployments absolute path directory. |
-| deployments | org.lorislab.maven.wildfly.server.deployments | deployments | docker-deploy,docker-undeploy,deploy | The wildfly server deployments directory. |
-| profile | org.lorislab.maven.wildfly.server.profile | standalone | docker-deploy,docker-undeploy,deploy |  The Wildfly profile. |
-| deployFile | | ${project.build.directory}/${project.build.finalName}.${project.packaging} | docker-deploy,docker-undeploy,deploy | The path of the file to deploy. |
-| deployDir | | ${project.build.directory}/${project.build.finalName} | docker-deploy,docker-undeploy,deploy | The directory to deploy for exploded |
-| targetDirName | | ${project.build.finalName}.${project.packaging} | docker-deploy,docker-undeploy,deploy | The directory name in the deploy directory. |
-| widlflyDir | org.lorislab.maven.wildfly.server.dir | | docker-deploy,docker-undeploy,deploy | The local wildfly server directory |
-| container | org.lorislab.maven.wildfly.container | ${project.artifactId} | docker-deploy,docker-undeploy | The docker container name |
-| exploded | org.lorislab.maven.wildfly.exploded | false | docker-deploy,docker-undeploy,deploy | The exploded flag. If true copy director and not artifact to the server |
+### absolutePath
+* description: The deployments absolute path directory.
+* property: org.lorislab.maven.wildfly.server.path
+* default: <not_defined>
+* goals: 
+  * docker-deploy
+  * docker-undeploy
+  * deploy
+
+### pattern
+* description: The file pattern for delete artifact from server deployments directory.
+* property: org.lorislab.maven.wildfly.pattern
+* default: ${project.artifactId}-*.${project.packaging}
+* goals: 
+  * docker-undeploy
+
+### targetDirName
+* description: The directory name in the deploy directory.
+* property: 
+* default: ${project.build.finalName}.${project.packaging}
+* goals: 
+  * docker-deploy
+  * docker-undeploy
+  * deploy
+
+### deployDir
+* description: The directory to deploy for exploded
+* property: 
+* default: ${project.build.directory}/${project.build.finalName}
+* goals: 
+  * docker-deploy
+  * docker-undeploy
+  * deploy
+
+### deployFile
+* description: The path of the file to deploy.
+* property: 
+* default: ${project.build.directory}/${project.build.finalName}.${project.packaging}
+* goals: 
+  * docker-deploy
+  * docker-undeploy
+  * deploy
+
+### deployments
+* description: The name of the deployments directory.
+* property: org.lorislab.maven.wildfly.server.deployments
+* default: deployments
+* goals: 
+  * docker-deploy
+  * docker-undeploy
+  * deploy
+
+### profile
+* description: The profile.
+* property: org.lorislab.maven.wildfly.server.profile
+* default: standalone
+* goals: 
+  * docker-deploy
+  * docker-undeploy
+  * deploy
+
+### widlflyDir
+* description: The local server directory.
+* property: org.lorislab.maven.wildfly.server.dir
+* default: standalone
+* goals: 
+  * docker-deploy
+  * docker-undeploy
+  * deploy
+
+### container
+* description: The profile.
+* property: org.lorislab.maven.wildfly.container
+* default: ${project.artifactId}
+* goals: 
+  * docker-deploy
+  * docker-undeploy
+
+### exploded
+* description: The exploded flag. If true copy director and not artifact to the server
+* property: org.lorislab.maven.wildfly.exploded
+* default: false
+* goals: 
+  * docker-deploy
+  * docker-undeploy
+  * deploy
 
 # Examples
 

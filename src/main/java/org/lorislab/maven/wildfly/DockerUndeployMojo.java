@@ -33,7 +33,7 @@ import org.apache.maven.plugins.annotations.Parameter;
 public class DockerUndeployMojo extends AbstractDockerMojo {
     
     /**
-     * The docker container name.
+     * The file pattern for delete artifact from server deployments directory.
      */
     @Parameter(defaultValue = "${project.artifactId}-*.${project.packaging}", property = "org.lorislab.maven.wildfly.pattern" )
     protected String pattern;
