@@ -31,6 +31,18 @@ import org.apache.maven.project.MavenProject;
 public abstract class AbstractServerMavenPlugin extends AbstractMojo {
 
     /**
+     * The exploded flag.
+     */
+    @Parameter(defaultValue = "false", property = "org.lorislab.maven.wildfly.exploded")
+    protected boolean exploded = false;
+    
+    /**
+     * The Wildfly deployments absolute path directory.
+     */    
+    @Parameter(property = "org.lorislab.maven.wildfly.server.path")
+    protected String absolutePath = null;
+    
+    /**
      * The Wildfly deployments directory.
      */
     @Parameter(defaultValue = "deployments", property = "org.lorislab.maven.wildfly.server.deployments")
@@ -80,12 +92,22 @@ public abstract class AbstractServerMavenPlugin extends AbstractMojo {
      * @throws MojoExecutionException if the method fails.
      * @throws MojoFailureException if the method fails.
      */
-    protected File getTargetDir() throws MojoExecutionException, MojoFailureException {
+    protected File getLocalTargetDir() throws MojoExecutionException, MojoFailureException {
 
+        // check the deployment artifact
         if (deployFile == null || !deployFile.exists()) {
             throw new MojoFailureException("The build final name does not exists! Path: " + deployFile.getAbsolutePath());
         }
-
+        
+        // check the absolute path
+        if (absolutePath != null && !absolutePath.isEmpty()) {
+            File tmp = new File(absolutePath);
+            if (!tmp.exists()) {
+                throw new MojoFailureException("The path server deployment directory does not exists! Path: " + tmp.getAbsolutePath());
+            }            
+            return tmp;
+        }
+        
         if (widlflyDir == null || widlflyDir.isEmpty()) {
             throw new MojoFailureException("The Wildfly directory is not defined! property: org.lorislab.maven.wildfly.server.dir");
         }
