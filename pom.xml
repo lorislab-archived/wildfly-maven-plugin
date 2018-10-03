@@ -149,7 +149,7 @@
     <distributionManagement>
         <repository>
             <id>bintray</id>
-            <url>https://api.bintray.com/maven/lorislab/maven/wildfly-maven-plugin;publish=1</url>
+            <url>https://api.bintray.com/maven/lorislab/maven/wildfly-maven-plugin/;publish=1</url>
         </repository>
     </distributionManagement>            
 </project>
