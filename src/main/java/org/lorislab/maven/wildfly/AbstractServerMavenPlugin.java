@@ -81,7 +81,7 @@ public abstract class AbstractServerMavenPlugin extends AbstractMojo {
     /**
      * The MAVEN project.
      */
-    @Component
+    @Parameter( defaultValue = "${project}", readonly = true )
     protected MavenProject project;      
 
     /**
