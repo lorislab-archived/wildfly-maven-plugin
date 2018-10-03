@@ -6,21 +6,23 @@
 [![Join the chat at https://gitter.im/lorislab/wildfly-maven-plugin](https://badges.gitter.im/lorislab/wildfly-maven-plugin.svg)](https://gitter.im/lorislab/wildfly-maven-plugin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Goals
-* deploy
-* docker-deploy
-* docker-undeploy
+* deploy - copy the artifact to the local wildfly server.
+* docker-deploy - copy the artifact to the wildfly docker container.
+* docker-undeploy - delete the artifact from the wildfly docker container.
 
-## docker-deploy
+## Parameters
 
-Copy the artifact to the wildfly docker container.
-
-## docker-undeploy
-
-Delete the artifact from the wildfly docker container.
-
-## deploy
-
-Copy the artifact to the local wildfly server.
+| Name        | Property    | Default     | Goal        | Description |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| absolutePath | org.lorislab.maven.wildfly.server.path | | docker-deploy,docker-undeploy,deploy | The wildfly server deployments absolute path directory. |
+| deployments | org.lorislab.maven.wildfly.server.deployments | deployments | docker-deploy,docker-undeploy,deploy | The wildfly server deployments directory. |
+| profile | org.lorislab.maven.wildfly.server.profile | standalone | docker-deploy,docker-undeploy,deploy |  The Wildfly profile. |
+| deployFile | | ${project.build.directory}/${project.build.finalName}.${project.packaging} | docker-deploy,docker-undeploy,deploy | The path of the file to deploy. |
+| deployDir | | ${project.build.directory}/${project.build.finalName} | docker-deploy,docker-undeploy,deploy | The directory to deploy for exploded |
+| targetDirName | | ${project.build.finalName}.${project.packaging} | docker-deploy,docker-undeploy,deploy | The directory name in the deploy directory. |
+| widlflyDir | org.lorislab.maven.wildfly.server.dir | | docker-deploy,docker-undeploy,deploy | The local wildfly server directory |
+| container | org.lorislab.maven.wildfly.container | ${project.artifactId} | docker-deploy,docker-undeploy | The docker container name |
+| exploded | org.lorislab.maven.wildfly.exploded | false | docker-deploy,docker-undeploy,deploy | The exploded flag. If true copy director and not artifact to the server |
 
 # Examples
 
