@@ -1,13 +1,19 @@
 language: java
-
 jdk:
-  - oraclejdk8
-  
+  - openjdk11
 cache:
   directories:
-  - $HOME/.m2
-  
-install: true
+    - $HOME/.m2
 
-script: 
-    - mvn clean install
+before_install:
+  - git clone https://github.com/lorislab/travis-configuration.git .scripts
+  - find .scripts -type f -iname "*.sh" -exec chmod +x {} \;
+
+install: ./.scripts/maven/install.sh
+
+script:
+  - ./.scripts/maven/build.sh
+  - ./.scripts/maven/deploy_master.sh
+
+after_success:
+  - ./.scripts/maven/after_success.sh

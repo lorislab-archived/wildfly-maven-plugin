@@ -5,10 +5,11 @@
     <groupId>org.lorislab.maven</groupId>
     <artifactId>wildfly-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>1.1.2-SNAPSHOT</version>
+    <version>1.2.0-SNAPSHOT</version>
     
     <name>Wildfly server plugin</name>
     <description>The wildfly server plugin</description>
+    <url>https://github.com/lorislab/wildfly-maven-plugin</url>
 
     <scm>
         <connection>scm:git:https://github.com/lorislab/wildfly-maven-plugin.git</connection>
@@ -20,6 +21,11 @@
     <prerequisites>
         <maven>3.3</maven>
     </prerequisites>
+
+    <organization>
+        <name>lorislab</name>
+        <url>http://www.lorislab.org</url>
+    </organization>
 
     <licenses>
         <license>
@@ -145,11 +151,18 @@
             </plugin>        
         </plugins>
     </build>
-	
+
     <distributionManagement>
         <repository>
             <id>bintray</id>
-            <url>https://api.bintray.com/maven/lorislab/maven/wildfly-maven-plugin/;publish=1</url>
+            <name>Release</name>
+            <url>https://api.bintray.com/maven/lorislab/maven/maven/;publish=1</url>
         </repository>
-    </distributionManagement>            
+        <snapshotRepository>
+            <id>bintray</id>
+            <name>Snapshot</name>
+            <url>http://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
