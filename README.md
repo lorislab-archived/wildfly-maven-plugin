@@ -1,8 +1,9 @@
 # Deploy your application to the Wildfly server
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Build Status](https://travis-ci.org/lorislab/wildfly-maven-plugin.png?branch=master)](https://travis-ci.org/lorislab/wildfly-maven-plugin)
-[![Download](https://api.bintray.com/packages/lorislab/maven/wildfly-maven-plugin/images/download.svg) ](http://dl.bintray.com/lorislab/maven/org/lorislab/wildfly-maven-plugin/wildfly-maven-plugin/)
+[![Build Status](https://travis-ci.com/lorislab/wildfly-maven-plugin.svg?branch=develop)](https://travis-ci.com/lorislab/wildfly-maven-plugin)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.lorislab.maven/wildfly-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.lorislab.maven/wildfly-maven-plugin)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/01d4440634194ca7845b3c86b2b45475)](https://www.codacy.com/app/lorislab/wildfly-maven-plugin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lorislab/wildfly-maven-plugin&amp;utm_campaign=Badge_Grade)
 [![Join the chat at https://gitter.im/lorislab/wildfly-maven-plugin](https://badges.gitter.im/lorislab/wildfly-maven-plugin.svg)](https://gitter.im/lorislab/wildfly-maven-plugin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Goals
