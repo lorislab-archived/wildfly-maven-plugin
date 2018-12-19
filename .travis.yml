@@ -13,7 +13,7 @@ install: ./.scripts/maven/install.sh
 
 script:
   - ./.scripts/maven/build.sh
-  - ./.scripts/maven/deploy_master.sh
+  - ./.scripts/maven/deploy.sh
 
 after_success:
   - ./.scripts/maven/after_success.sh
