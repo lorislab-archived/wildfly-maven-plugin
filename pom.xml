@@ -192,7 +192,8 @@
         <snapshotRepository>
             <id>bintray</id>
             <name>Snapshot</name>
-            <url>http://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+            <url>http://oss.jfrog.org/artifactory/plugins-snapshot</url>
+            <!--<url>http://oss.jfrog.org/artifactory/oss-snapshot-local</url>-->
         </snapshotRepository>
     </distributionManagement>
 
