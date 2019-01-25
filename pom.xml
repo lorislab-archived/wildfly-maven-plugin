@@ -185,12 +185,12 @@
 
     <distributionManagement>
         <repository>
-            <id>bintray</id>
+            <id>bintray2</id>
             <name>Release</name>
             <url>https://api.bintray.com/maven/lorislab/maven/maven/;publish=1</url>
         </repository>
         <snapshotRepository>
-            <id>bintray</id>
+            <id>bintray2</id>
             <name>Snapshot</name>
             <url>http://oss.jfrog.org/artifactory/oss-snapshot-local</url>
         </snapshotRepository>
