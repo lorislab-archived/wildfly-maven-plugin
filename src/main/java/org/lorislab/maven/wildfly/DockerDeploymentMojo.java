@@ -20,6 +20,7 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 
 /**
  * The docker deployment task.
@@ -31,6 +32,12 @@ import org.apache.maven.plugins.annotations.Mojo;
         requiresProject = true,
         threadSafe = true)
 public class DockerDeploymentMojo extends AbstractDockerMojo {
+
+    /**
+     * The Wildfly deployments absolute path directory.
+     */
+    @Parameter(property = "org.lorislab.maven.wildfly.target.file")
+    protected String targetFile = null;
 
     /**
      * The deploy the file to the server.
@@ -58,6 +65,9 @@ public class DockerDeploymentMojo extends AbstractDockerMojo {
             
         try {            
             String target = container + ":" + getDockerPath();
+            if (targetFile != null && !targetFile.isEmpty()) {
+                target = target + targetFile;
+            }
             String cmd = "docker cp " + file.getAbsolutePath() + tmp + target;
             getLog().info(cmd);
             Process p = Runtime.getRuntime().exec(cmd);
