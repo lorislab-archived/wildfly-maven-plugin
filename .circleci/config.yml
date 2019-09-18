@@ -10,9 +10,7 @@ jobs:
       - checkout
       - run:
           name: "Import key"
-          command: |
-            echo -e $GPG_KEY_SECRET > PRIVATE_GPG_KEY.asc
-            gpg --batch --import --passphrase "$GPG_PASSPHRASE" PRIVATE_GPG_KEY.asc
+          command: echo -e "$GPG_KEY_SECRET" | gpg --batch --import --passphrase "$GPG_PASSPHRASE"
       - run:
           name: "Configuration"
           command: git clone $GIT_TEMPLATE_URL .scripts
@@ -39,8 +37,6 @@ jobs:
           name: "Configuration"
           command: |
             git clone $GIT_TEMPLATE_URL .scripts
-            echo "$GPG_KEY_SECRET" | gpg --batch --import --passphrase "$GPG_PASSPHRASE" -
-            gpg --list-keys
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "pom.xml" }}
