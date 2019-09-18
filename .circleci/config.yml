@@ -9,9 +9,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Import key"
-          command: echo -e "$GPG_KEY_SECRET" | gpg --batch --import --passphrase "$GPG_PASSPHRASE"
-      - run:
           name: "Configuration"
           command: git clone $GIT_TEMPLATE_URL .scripts
       - restore_cache:
@@ -33,6 +30,9 @@ jobs:
       GIT_TEMPLATE_URL: https://github.com/lorislab/ci-template.git
     steps:
       - checkout
+      - run:
+          name: "Import gpg key"
+          command: echo -e "$GPG_KEY_SECRET" | gpg --batch --import --passphrase "$GPG_PASSPHRASE"
       - run:
           name: "Configuration"
           command: |
