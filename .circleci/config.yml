@@ -9,6 +9,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "Import key"
+          command: echo "$GPG_KEY_SECRET" | gpg --batch --import --passphrase "$GPG_PASSPHRASE"
+      - run:
           name: "Configuration"
           command: git clone $GIT_TEMPLATE_URL .scripts
       - restore_cache:
