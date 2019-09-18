@@ -1,9 +1,9 @@
 # Deploy your application to the Wildfly server
 
 [![License](https://img.shields.io/github/license/quarkusio/quarkus?style=for-the-badge&logo=apache)](https://www.apache.org/licenses/LICENSE-2.0)
-![CircleCI](https://img.shields.io/circleci/build/github/lorislab-archived/wildfly-maven-plugin?logo=circleci&style=for-the-badge)
-![Maven Central](https://img.shields.io/maven-central/v/org.lorislab.maven/wildfly-maven-plugin?logo=java&style=for-the-badge)
-![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/lorislab-archived/wildfly-maven-plugin?logo=github&style=for-the-badge)
+[![CircleCI](https://img.shields.io/circleci/build/github/lorislab-archived/wildfly-maven-plugin?logo=circleci&style=for-the-badge)](https://circleci.com/gh/lorislab-archived/wildfly-maven-plugin)
+[![Maven Central](https://img.shields.io/maven-central/v/org.lorislab.maven/wildfly-maven-plugin?logo=java&style=for-the-badge)](https://maven-badges.herokuapp.com/maven-central/org.lorislab.maven/wildfly-maven-plugin)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/lorislab-archived/wildfly-maven-plugin?logo=github&style=for-the-badge)](https://github.com/lorislab-archived/wildfly-maven-plugin/releases/latest)
 
 # Goals
 * deploy - copy the artifact to the local wildfly server.

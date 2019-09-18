@@ -1,11 +1,14 @@
+defaults: &defaults
+  docker:
+    - image: maven:3.6.1-jdk-11
+  environment:
+    MAVEN_CLI_OPTS: "-s .scripts/.m2/settings.xml --batch-mode"
+    GIT_TEMPLATE_URL: https://github.com/lorislab/ci-template.git
+
 version: 2.1
 jobs:
   build:
-    docker:
-      - image: maven:3.6.1-jdk-11
-    environment:
-      MAVEN_CLI_OPTS: "-s .scripts/.m2/settings.xml --batch-mode"
-      GIT_TEMPLATE_URL: https://github.com/lorislab/ci-template.git
+    <<: *defaults
     steps:
       - checkout
       - run:
@@ -23,11 +26,7 @@ jobs:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
   release:
-    docker:
-      - image: maven:3.6.1-jdk-11
-    environment:
-      MAVEN_CLI_OPTS: "-s .scripts/.m2/settings.xml --batch-mode"
-      GIT_TEMPLATE_URL: https://github.com/lorislab/ci-template.git
+    <<: *defaults
     steps:
       - checkout
       - run:
