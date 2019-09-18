@@ -1,10 +1,9 @@
 # Deploy your application to the Wildfly server
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Build Status](https://travis-ci.com/lorislab/wildfly-maven-plugin.svg?branch=develop)](https://travis-ci.com/lorislab/wildfly-maven-plugin)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.lorislab.maven/wildfly-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.lorislab.maven/wildfly-maven-plugin)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/01d4440634194ca7845b3c86b2b45475)](https://www.codacy.com/app/lorislab/wildfly-maven-plugin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lorislab/wildfly-maven-plugin&amp;utm_campaign=Badge_Grade)
-[![Join the chat at https://gitter.im/lorislab/wildfly-maven-plugin](https://badges.gitter.im/lorislab/wildfly-maven-plugin.svg)](https://gitter.im/lorislab/wildfly-maven-plugin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![License](https://img.shields.io/github/license/quarkusio/quarkus?style=for-the-badge&logo=apache)](https://www.apache.org/licenses/LICENSE-2.0)
+![CircleCI](https://img.shields.io/circleci/build/github/lorislab-archived/wildfly-maven-plugin?logo=circleci&style=for-the-badge)
+![Maven Central](https://img.shields.io/maven-central/v/org.lorislab.maven/wildfly-maven-plugin?logo=java&style=for-the-badge)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/lorislab-archived/wildfly-maven-plugin?logo=github&style=for-the-badge)
 
 # Goals
 * deploy - copy the artifact to the local wildfly server.
