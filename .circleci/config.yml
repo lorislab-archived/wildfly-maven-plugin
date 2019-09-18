@@ -50,21 +50,21 @@ jobs:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
-  workflows:
-    version: 2
-    maven-build:
-      jobs:
-        - build:
-            context: Pipeline
-            filters:
-              tags:
-                ignore: /.*/
-              branches:
-                only: /.*/
-        - release:
-            context: Pipeline
-            filters:
-              tags:
-                only: /.*/
-              branches:
-                ignore: /.*/
+workflows:
+  version: 2
+  maven-build:
+    jobs:
+      - build:
+          context: Pipeline
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only: /.*/
+      - release:
+          context: Pipeline
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/
