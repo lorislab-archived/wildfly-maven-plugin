@@ -3,15 +3,21 @@ jobs:
   build:
     docker:
       - image: maven:3.6.1-jdk-11
+    environment:
+      MAVEN_CLI_OPTS: "-s .scripts/.m2/settings.xml --batch-mode"
+      GIT_TEMPLATE_URL: https://github.com/lorislab/ci-template.git
     steps:
       - checkout
+      - run:
+          name: "Configuration"
+          command: git clone $GIT_TEMPLATE_URL .scripts
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "pom.xml" }}
             - v1-dependencies-
       - run:
           name: "Build"
-          command: mvn -B package -Prelease
+          command: mvn $MAVEN_CLI_OPTS package -Prelease
       - save_cache:
           paths:
             - ~/.m2
