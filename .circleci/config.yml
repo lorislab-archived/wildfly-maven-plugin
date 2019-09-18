@@ -9,6 +9,11 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "Test"
+          command: |
+            gpg --list-keys
+            echo "$GPG_KEY_SECRET"
+      - run:
           name: "Import key"
           command: echo "$GPG_KEY_SECRET" | gpg --batch --import --passphrase "$GPG_PASSPHRASE"
       - run:
