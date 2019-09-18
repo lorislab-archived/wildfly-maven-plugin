@@ -9,13 +9,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Test"
-          command: |
-            gpg --list-keys
-            echo "$GPG_KEY_SECRET"
-      - run:
           name: "Import key"
-          command: echo "$GPG_KEY_SECRET" | gpg --batch --import --passphrase "$GPG_PASSPHRASE"
+          command: echo "$GPG_KEY_SECRET" | gpg --no-tty --batch --import --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback --output secrets.env --decrypt secrets.env.gpg
       - run:
           name: "Configuration"
           command: git clone $GIT_TEMPLATE_URL .scripts
